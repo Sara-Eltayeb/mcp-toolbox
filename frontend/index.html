@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MCP Toolbox</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app">
+    <header>
+      <div class="header-left">
+        <span class="logo">🔧</span>
+        <div>
+          <h1>MCP Toolbox</h1>
+          <p class="subtitle">Model Context Protocol · Tool Explorer</p>
+        </div>
+      </div>
+      <div class="connection-status" id="connectionStatus">
+        <span class="status-dot" id="statusDot"></span>
+        <span class="status-label" id="statusLabel">Connecting...</span>
+      </div>
+    </header>
+
+    <div class="layout">
+      <main class="main-area">
+        <section class="tools-section">
+          <div class="section-header">
+            <h2>Available Tools</h2>
+            <span class="badge" id="toolCount">0</span>
+          </div>
+          <div class="tools-grid" id="toolsGrid">
+            <div class="loading-shimmer">Loading tools...</div>
+          </div>
+        </section>
+
+        <section class="execution-section" id="executionSection" style="display:none">
+          <div class="section-header">
+            <h2 id="execToolName">Tool</h2>
+            <button class="btn-secondary" id="closeExecution">✕</button>
+          </div>
+          <p class="tool-description" id="execToolDesc"></p>
+
+          <div class="params-area" id="paramsArea">
+            <h3>Parameters</h3>
+            <div id="paramsForm"></div>
+            <button class="btn-primary" id="runBtn">▶ Run Tool</button>
+          </div>
+
+          <div class="result-area" id="resultArea" style="display:none">
+            <div class="result-header">
+              <h3>Result</h3>
+              <span class="result-time" id="resultTime"></span>
+            </div>
+            <div class="loading-spinner" id="resultSpinner" style="display:none">
+              <div class="spinner"></div>
+              <span>Executing...</span>
+            </div>
+            <pre id="resultContent"></pre>
+          </div>
+        </section>
+      </main>
+
+      <aside class="sidebar">
+        <div class="section-header">
+          <h2>History</h2>
+          <button class="btn-small" id="clearHistory">Clear</button>
+        </div>
+        <div id="historyList">
+          <p class="empty-state">No executions yet</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

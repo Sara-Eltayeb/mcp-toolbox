@@ -1,0 +1,14 @@
+{
+  "name": "mcp-toolbox-backend",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --eval \"console.log('OK: no tests configured')\""
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.7.0",
+    "cors": "^2.8.5",
+    "express": "^4.21.0"
+  }
+}
