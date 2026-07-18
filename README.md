@@ -51,6 +51,24 @@ cd backend
 npm install
 ```
 
+## Push workflow files (GitHub Actions)
+
+The `.github/workflows/` directory exists locally but requires a GitHub token with the `workflow` scope to push. If you see an error like `refusing to allow an OAuth App to create or update workflow`, run:
+
+```bash
+# Refresh your GitHub CLI auth with the workflow scope (interactive — opens a browser)
+gh auth refresh --hostname github.com --scopes workflow
+
+# Then push
+git push origin master
+```
+
+Alternatively, create a [classic PAT](https://github.com/settings/tokens) with `repo` and `workflow` scopes, then:
+
+```bash
+GH_TOKEN=<your-pat> git push origin master
+```
+
 ## Running the backend
 
 ```bash
